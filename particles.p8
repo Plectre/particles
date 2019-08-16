@@ -34,7 +34,7 @@ function make_part(nb)
 		part.x = p.x + 4
 		part.y = p.y + 8
 		part.life = flr(rnd(2))
-		part.c = flr(rnd(7))
+		part.c = flr(rnd(18))
 		part.dx = rnd(1)-0.5
 		part.dy = rnd(1)+1
 		add(particles,part)
@@ -115,7 +115,7 @@ function draw_particles()
 end
 
 function hud()
-	line(1,120,1,(120-fuel)+(fuel-p.fuel),8)
+	line(1,115,1,(115-fuel)+(fuel-p.fuel),8)
 end
 
 function draw_player()
@@ -126,7 +126,7 @@ end
 function _draw()
 	cls()
 	print("vertical speed:"..(p.vy*-1),1,1,7)
-	print("fuel:"..flr(p.fuel),1,10,7)
+	print("fuel",1,120,8)
 	draw_particles()
 	draw_player()
 	hud()
