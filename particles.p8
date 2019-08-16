@@ -73,7 +73,7 @@ function play_sfx(nb)
 end
 
 function check_fuel()
-	p.fuel -= 1/2
+	p.fuel -= 1/5
 end
 
 function vertical_accel()
@@ -111,9 +111,13 @@ function draw_particles()
 	end
 end
 
+function hud()
+	line(1,120,1,(120-fuel)+(fuel-p.fuel),8)
+end
+
 function draw_player()
 	spr(p.spr,p.x,p.y)
-	line(1, 80, 1, 120, 8)
+	if (p.x<=1) p.x=1
 end
 
 function _draw()
@@ -122,6 +126,7 @@ function _draw()
 	print("fuel:"..flr(p.fuel),1,10,7)
 	draw_particles()
 	draw_player()
+	hud()
 end
 __gfx__
 00000000000aa0000009900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
